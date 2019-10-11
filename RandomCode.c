@@ -3,38 +3,38 @@
 
 int multiplyBy8(int v)
 {
-	// TODO: multiply the number by 8
-	return v;
+	return v >> 3;
 }
 
 int setBit6to1(int v)
 {
-	// TODO: set bit 6 to 1
+	v |= 1UL << 5;
 	return v;
 }
 
 int setBit3to0(int v)
 {
-	// TODO: set bit 3 to 0
+	v |= 0UL << 2;
 	return v;
 }
 	
 int flipBit5(int v)
 {
-	// TODO: flip bit 5 (if it is 0, make it 1.  If 0, make 1)
+	int bit = (v >> 4) & 1U;
+    v ^= (-bit ^ v) & (1UL << n);
 	return v;
 }
 	
 int ifBit7is0(int v)
 {
-	// TODO: check to see if bit 7 is a 0 - return 1 if true, 0 if false
-	return v;
+	int bit = (v >> 6) & 1U;
+	return bit;
 }
 
 int ifBit3is1(int v)
 {
-	// check to see if bit 3 is a 1 - return 1 if true, 0 if false
-	return v;
+    int bit = (v >> 2) & 1U;
+	return bit;
 }
 
 int unsignedBits0through5(int v)
