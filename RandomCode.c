@@ -8,27 +8,28 @@ int multiplyBy8(int v)
 
 int setBit6to1(int v)
 {
-	v ^= (-1 ^ v) & (1UL << 6);
+    v |= 1UL << 6;
 	return v;
 }
 
 int setBit3to0(int v)
 {
-	v ^= (0 ^ v) & (1UL << 3);
+	v &= ~(1UL << 3);
 	return v;
 }
 	
 int flipBit5(int v)
 {
-	int bit = (v >> 4) & 1U;
-    v ^= (-bit ^ v) & (1UL << 4);
+    int bit = (v >> 5) & 1U;
+    v ^= (-bit ^ v) & (1UL << 5);
 	return v;
 }
 	
 int ifBit7is0(int v)
 {
-	int bit = (v >> 6) & 1U;
-	return bit;
+	int bit = (v >> 7) & 1U;
+	if (bit == 0) return 1;
+    return 0;
 }
 
 int ifBit3is1(int v)
