@@ -1,13 +1,13 @@
 #this is a make file to automate the compilation process
 #target: dependencies
 
-all: randomMain randomCodeTester
+all: RandomMain RandomCodeTester
 
-randomCodeTester: randomCode.o randomCodeTester.o
-	g++ randomCode.c randomCodeTester.c -o randomCodeTester
+RandomCodeTester: RandomCode.c RandomCodeTester.c
+	g++ RandomCode.c RandomCodeTester.c -o RandomCodeTester
 
-randomMain: randomCode.o randomMain.o
-	g++ randomCode.c randomMain.c -o randomMain
+RandomMain: RandomCode.c RandomMain.c
+	g++ RandomCode.c RandomMain.c -o RandomMain
 
 clean:
-	rm randomMain randomCodeTester *.o
+	rm RandomMain RandomCodeTester *.o

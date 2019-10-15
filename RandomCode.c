@@ -3,25 +3,25 @@
 
 int multiplyBy8(int v)
 {
-	return v >> 3;
+	return v*8;
 }
 
 int setBit6to1(int v)
 {
-	v |= 1UL << 5;
+	v ^= (-1 ^ v) & (1UL << 6);
 	return v;
 }
 
 int setBit3to0(int v)
 {
-	v |= 0UL << 2;
+	v ^= (0 ^ v) & (1UL << 3);
 	return v;
 }
 	
 int flipBit5(int v)
 {
 	int bit = (v >> 4) & 1U;
-    v ^= (-bit ^ v) & (1UL << n);
+    v ^= (-bit ^ v) & (1UL << 4);
 	return v;
 }
 	
