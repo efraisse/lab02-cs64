@@ -20,8 +20,7 @@ int setBit3to0(int v)
 	
 int flipBit5(int v)
 {
-    int bit = (v >> 5) & 1U;
-    v ^= (-bit ^ v) & (1UL << 5);
+    v ^= 1UL << 5;
 	return v;
 }
 	
@@ -34,13 +33,12 @@ int ifBit7is0(int v)
 
 int ifBit3is1(int v)
 {
-    int bit = (v >> 2) & 1U;
+    int bit = (v >> 3) & 1U;
 	return bit;
 }
 
 int unsignedBits0through5(int v)
-{
-	// return the unsigned value in bits 0 through 5
+{ 
 	return v;
 }
 
