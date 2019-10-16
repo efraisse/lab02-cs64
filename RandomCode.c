@@ -38,32 +38,40 @@ int ifBit3is1(int v)
 }
 
 int unsignedBits0through5(int v)
-{ 
-	return v;
+{
+    unsigned int c = v;
+    c %= 64;
+	return c;
 }
 
 int unsignedBits6through9(int v)
 {
-	// return the unsigned value in bits 6 through 9
-	return v;
+    unsigned int b = v;
+    b = b >> 6;
+    b %= 16;
+	return b;
 }
 
 int signedBits0through5(int v)
 {
-	// return the signed value in bits 0 through 5
-	return v;
+	v = (v & 0b111111);
+    if (v > 31) v-= 64;
+    return v;
 }
 
 int signedBits6through9(int v)
 {
-	// return the signed value in bits 6 through 9
-	return v;
+	v = (v & 0b1111000000) >> 6;
+    if (v > 7) v -= 16;
+    return v;
 }
 
 int setBits4through9(int v, int setValue)
 {
-	// set bits 4 through 9 in v to become setValue
-	return v;
+	setValue &= (0b111111);
+    setValue = setValue << 4;
+    v = v & ~(0b111111 << 4);
+	return v | setValue;
 }
 
 
